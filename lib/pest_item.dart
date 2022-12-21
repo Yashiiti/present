@@ -12,15 +12,15 @@ class PestItem extends StatelessWidget {
     required this.title,
   });
 
-  // void selectMeal(ctx) {
-  //   Navigator.of(ctx).pushNamed('/meal-detail', arguments: id);
-  // }
+  void selectPest(ctx) {
+    Navigator.of(ctx).pushNamed('/pest-detail', arguments: id);
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: Colors.black26,
-      // onTap: () => selectMeal(context),
+      onTap: () => selectPest(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,

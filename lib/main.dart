@@ -3,6 +3,7 @@ import 'package:krishi_seva/crops_screen.dart';
 import 'package:krishi_seva/data.dart';
 import 'package:krishi_seva/models/diseases.dart';
 import 'package:krishi_seva/models/pests.dart';
+import 'package:krishi_seva/pest_details.dart';
 import 'package:krishi_seva/tabs_screen.dart';
 
 void main() {
@@ -39,13 +40,16 @@ class _MyAppState extends State<MyApp> {
           canvasColor: const Color.fromRGBO(190, 225, 168, 1),
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              bodyText2: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              caption: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontFamily: 'RobotoCondensed',
-                  fontWeight: FontWeight.bold))),
+                bodyText1:
+                    const TextStyle(color: Color.fromARGB(255, 1, 52, 11)),
+                bodyText2:
+                    const TextStyle(color: Color.fromARGB(255, 17, 74, 27)),
+                caption: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontFamily: 'RobotoCondensed',
+                    fontWeight: FontWeight.bold),
+              )),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Krishi Seva'),
@@ -54,6 +58,7 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         '/crop-details': (ctx) => TabsScreen(_cropTitle, _pests, _diseases),
+        '/pest-detail': (ctx) => PestDetailsScreen(),
       },
     );
   }
