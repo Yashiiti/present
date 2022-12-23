@@ -52,12 +52,19 @@ class PestDetailsScreen extends StatelessWidget {
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
-                        margin: const EdgeInsets.symmetric(vertical: 10.0),
-                        width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      margin: const EdgeInsets.symmetric(vertical: 10.0),
+                      width: MediaQuery.of(context).size.width,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
                         child: Image.network(
                           selectedPest.images[0],
                           fit: BoxFit.cover,
-                        ));
+                        ),
+                      ),
+                    );
                   },
                 );
               }).toList(),
