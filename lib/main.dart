@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:krishi_seva/crops_screen.dart';
 import 'package:krishi_seva/data.dart';
+import 'package:krishi_seva/drawer.dart';
 import 'package:krishi_seva/models/diseases.dart';
 import 'package:krishi_seva/models/pests.dart';
 import 'package:krishi_seva/pest_details.dart';
 import 'package:krishi_seva/tabs_screen.dart';
+import 'package:krishi_seva/potato_pest_manager.dart';
 
 void main() {
   runApp(MyApp());
@@ -51,6 +53,7 @@ class _MyAppState extends State<MyApp> {
                     fontWeight: FontWeight.bold),
               )),
       home: Scaffold(
+        drawer: MainDrawer(),
         appBar: AppBar(
           title: const Text('Krishi Seva'),
         ),
@@ -59,6 +62,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/crop-details': (ctx) => TabsScreen(_cropTitle, _pests, _diseases),
         '/pest-detail': (ctx) => PestDetailsScreen(),
+        '/potatopest': (ctx) => PotatoPestScreen(),
       },
     );
   }
